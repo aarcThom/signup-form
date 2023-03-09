@@ -7,6 +7,7 @@
     <title>Signup Form</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="signup-script.js"></script>
 </head>
 <body>
     <div id="image-box">
@@ -24,9 +25,69 @@
                     Join now to secure your place on the Odin off-world colony.
                 </p>
             </div>
-            <div id="form-section"></div>
-            <div id="button-box"></div>
+            <div id="form-section">
+
+                <form id="info-form">
+                    <fieldset>
+                      <legend>SIGN UP <span id="now">NOW!</span></legend>
+                      <p class="form-field">
+                        <label for="first-name">FIRST NAME</label>
+                        <input type="text" name="first-name" id="first_name" required
+                        minlength="2" maxlength="50"
+                        placeholder="Frankie"
+                        title="Please provide your first name."/>
+                      </p>
+
+                      <p class="form-field">
+                        <label for="last-name">LAST NAME</label>
+                        <input type="text" name="last-name" id="last_name" required 
+                        minlength="2" maxlength="50"
+                        placeholder="Teardrop"
+                        title="Please provide your last name."/>
+                      </p>
+
+                      <p class="form-field">
+                        <label for="email">EMAIL</label>
+                        <input type="email" name="email" id="email" required
+                        title="Please enter a valid email."
+                        pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+                        placeholder="frankie@offworldmail.com"/>
+                      </p>
+
+                      <p class="form-field">
+                        <label for="phone">PHONE NUMBER</label>
+                        <input type="text" name="phone" id="phone" 
+                        required pattern="(^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$)" 
+                        title="Please enter a valid phone number, example: 123-456-7890"
+                        placeholder="123-456-7890"/>
+                      </p>
+
+                      <p class="form-field">
+                        <label for="pass">PASSWORD</label>
+                        <input type="password" name="pass" id="pass" required
+                        pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                        title="please enter a password with minimum eight characters, at least one uppercase letter, one lowercase letter, one number, and one special character."
+                        placeholder="***********"/>
+                      </p>
+
+                      <p class="form-field">
+                        <label for="pass-confirm">CONFIRM PASSWORD</label>
+                        <input type="password" name="pass-confirm" id="pass_confirm" required
+                        title="Please enter the same password."
+                        placeholder="***********"
+                        onkeyup="check()"/>
+                      </p>
+
+                    </fieldset>
+                  </form>
+
+            </div>
+
+            <div id="button-box">
+                <button id="submit-button" type="submit" form="info-form">SUBMIT <span id="sub-now">NOW!</span></button>
+            </div>
         </div>
     </div>
+
 </body>
 </html>
