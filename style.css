@@ -1,4 +1,4 @@
-#main-page, html, body {
+html, body {
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -7,13 +7,57 @@
 }
 
 #image-box {
-    flex-grow: 33.3;
+    position: relative;
+    flex: 0 0 40vw;
+    overflow: hidden;
 
     background-color: aqua;
 }
 
-#form-box {
-    flex-grow: 66.7;
+#sliding-background {
+    background: url("static/Cyberpunk2077_Crossroads_RGB.png");
+    height: 100vh;
+    width: calc(100vh * 2);
 
-    background-color: darkgoldenrod;
+    animation: slide 120s linear infinite;
 }
+
+/* image background animation */
+@keyframes slide {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+
+    50% {
+        transform: translate3d(calc(40vh * -2), 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+#image-banner {
+    position: absolute;
+    top: 33vh;
+    width: 100%;
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#odin-logo {
+    height: 90%;
+}
+
+#form-box {
+    flex: 0 0 60vw;
+
+    background-color: rgb(233, 178, 41);
+    border-left: 4px solid rgba(0, 0, 0, 0.95);
+}
+
