@@ -48,6 +48,17 @@ html, body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+#image-credits {
+    position: absolute;
+    bottom: 5vh;
+    width: 100%;
+    
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: rgb(192, 141, 12);
+}
+
 #odin-logo {
     height: 90%;
     max-width: 80%;
